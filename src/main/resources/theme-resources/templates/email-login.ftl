@@ -1,6 +1,6 @@
-<#import "template.ftl" as template>
-<@template.registrationLayout displayInfo=true; section>
+<#import "template.ftl" as layout>
+<@layout.registrationLayout displayInfo=true; section>
     <#if section = "header">
 
     </#if>
-</@template.registrationLayout>
+</@layout.registrationLayout>

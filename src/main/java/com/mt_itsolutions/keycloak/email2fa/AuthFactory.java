@@ -1,6 +1,7 @@
 /**
  * Copyright
  */
+
 package com.mt_itsolutions.keycloak.email2fa;
 
 import java.util.List;
@@ -47,6 +48,7 @@ public class AuthFactory implements AuthenticatorFactory {
 		return new AuthenticationExecutionModel.Requirement[] {
 			AuthenticationExecutionModel.Requirement.REQUIRED,
 			AuthenticationExecutionModel.Requirement.ALTERNATIVE,
+			AuthenticationExecutionModel.Requirement.CONDITIONAL,
 			AuthenticationExecutionModel.Requirement.DISABLED,
 		};
 	}
