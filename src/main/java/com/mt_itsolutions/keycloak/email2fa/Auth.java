@@ -30,7 +30,7 @@ public class Auth implements Authenticator {
 		} catch (EmailException e) {
 			log.error("Could not send email with verification code", e);
 			AuthChallenges.emailError(authenticationFlowContext);
-		} catch (IllegalStateException e) {
+		} catch (IllegalStateException | NullPointerException e) {
 			log.error("Could not generate code", e);
 			AuthChallenges.internalError(authenticationFlowContext);
 		}
@@ -69,7 +69,7 @@ public class Auth implements Authenticator {
 			} catch (EmailException e) {
 				log.error("Could not send email with verification code", e);
 				AuthChallenges.emailError(context);
-			} catch (IllegalStateException e) {
+			} catch (IllegalStateException | NullPointerException e) {
 				log.error("Could not generate code", e);
 				AuthChallenges.internalError(context);
 			}

@@ -6,6 +6,10 @@ services:
     ports:
       - "1025:1025"
       - "8025:8025"
+    networks:
+      keycloak:
+        aliases:
+          - mailhog
 
   keycloak:
     image: quay.io/keycloak/keycloak:23.0.0
@@ -19,3 +23,10 @@ services:
       - type: bind
         source: ./target/keycloak-2fa-email.jar
         target: /opt/keycloak/providers/keycloak-2fa-email.jar
+    networks:
+      keycloak:
+        aliases:
+          - keycloak
+
+networks:
+  keycloak:
