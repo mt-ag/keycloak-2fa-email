@@ -28,7 +28,7 @@ public class AuthChallenges {
 		context.failureChallenge(
 			AuthenticationFlowError.INTERNAL_ERROR,
 			context.form()
-				.setError("email2FAEmailNotSent")
+				.setError("email.2fa.error.mail.not.sent")
 				.createErrorPage(Response.Status.INTERNAL_SERVER_ERROR)
 		);
 	}
@@ -45,7 +45,7 @@ public class AuthChallenges {
 		context.failureChallenge(
 			AuthenticationFlowError.INVALID_CREDENTIALS,
 			context.form()
-				.setError("email2FACodeExpired")
+				.setError("email.2fa.error.code.expired")
 				.createErrorPage(Response.Status.UNAUTHORIZED)
 		);
 	}
@@ -54,7 +54,7 @@ public class AuthChallenges {
 		context.failureChallenge(
 			AuthenticationFlowError.INVALID_CREDENTIALS,
 			context.form()
-				.setError("email2FACodeMismatch")
+				.setError("email.2fa.error.code.mismatch")
 				.createErrorPage(Response.Status.UNAUTHORIZED)
 		);
 	}

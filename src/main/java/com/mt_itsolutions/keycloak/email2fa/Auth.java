@@ -115,7 +115,7 @@ public class Auth implements Authenticator {
 			.setAuthenticationSession(context.getAuthenticationSession())
 			.setRealm(context.getRealm())
 			.setUser(context.getUser())
-			.send("email2fa-subject", "email.ftl", bodyAttributes);
+			.send("email.2fa.mail.subject", "email.ftl", bodyAttributes);
 	}
 
 	private AuthCodeModel generateCode(AuthenticationFlowContext context) throws IllegalStateException {
