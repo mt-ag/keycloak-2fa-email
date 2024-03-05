@@ -21,7 +21,7 @@ public class Auth implements Authenticator {
 
 	@Override
 	public void authenticate(AuthenticationFlowContext authenticationFlowContext) {
-		log.info("EmailAuth.authenticate");
+		log.debug("EmailAuth.authenticate");
 
 		try {
 			var codeModel = generateCode(authenticationFlowContext);
@@ -38,7 +38,7 @@ public class Auth implements Authenticator {
 
 	@Override
 	public void action(AuthenticationFlowContext context) {
-		log.info("EmailAuth.action");
+		log.debug("EmailAuth.action");
 
 		final var enteredCode = context.getHttpRequest().getDecodedFormParameters().getFirst("code");
 		final var codeModel = AuthCodeModel.readFromAuthSession(context.getAuthenticationSession());
@@ -119,7 +119,7 @@ public class Auth implements Authenticator {
 	}
 
 	private AuthCodeModel generateCode(AuthenticationFlowContext context) throws IllegalStateException {
-		log.info("EmailAuth.generateCode");
+		log.debug("EmailAuth.generateCode");
 
 		final var codeConfig = AuthCodeConfig.readFromConfig(context.getAuthenticatorConfig());
 		final var codeModel = AuthCodeModel.createNewCode(codeConfig);
