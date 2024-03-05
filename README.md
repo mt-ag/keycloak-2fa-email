@@ -19,11 +19,13 @@ Copy the generated `.jar` file from the `target/` directory, into the `keycloak/
 ## Setup
 
 ### SMTP Server
+
 Connect Keycloak to an SMTP server in your realm's email settings.
 See the [official Keycloak documentation](https://www.keycloak.org/docs/latest/server_admin/index.html#_email) for more
 details on how to do so.
 
 ### Authentication Flows
+
 The SPI adds aa new authentication provider that can be used in browser-based Auth-flows.
 First make a copy of the built-in browser flow.
 Add the step `Email Verification Code` to the flow and set it to be conditional.
@@ -40,6 +42,7 @@ There are three settings for the `Email Verification Code` step:
 | Time-to-live | Time to live of the code to be valid in seconds | `300`              |
 
 ### User requirements
+
 A user hat to meet the following requirements to use the email 2FA provider:
 
 - User needs an email address in their profile
@@ -52,6 +55,7 @@ The `Email Verification Code` can be added to a conditional flow, so that is onl
 We are happy to receive pull request and issues.
 
 ### Development
+
 First clone the repository and build the project:
 
 ```shell
