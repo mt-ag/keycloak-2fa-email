@@ -26,7 +26,7 @@ details on how to do so.
 
 ### Authentication Flows
 
-The SPI adds aa new authentication provider that can be used in browser-based Auth-flows.
+The SPI adds a new authentication provider that can be used in browser-based Auth-flows.
 First make a copy of the built-in browser flow.
 Add the step `Email Verification Code` to the flow and set it to be conditional.
 See:
